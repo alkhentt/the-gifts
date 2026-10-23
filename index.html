@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Selamat ulang tahun</title>
+<meta name="description" content="Ada pesan dan hadiah buat ayang.">
+<meta name="theme-color" content="#8ec9f2">
+<meta property="og:title" content="Selamat ulang tahun 🎂">
+<meta property="og:description" content="Ada pesan dan hadiah buat ayang.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500&family=Caveat:wght@600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --sky-top: #7fc0f0;
+    --sky-mid: #b9e0fa;
+    --sky-low: #eaf6ff;
+    --ink: #1d3557;
+    --ink-soft: #4a6585;
+    --accent: #e0607e;
+    --line: #cfe5f7;
+    --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+    --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --hand: "Caveat", "Bradley Hand", cursive;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    min-height: 100vh;
+    font-family: var(--sans);
+    color: var(--ink);
+    line-height: 1.75;
+    background:
+      radial-gradient(240px 90px at 12% 14%, rgba(255,255,255,.95), transparent 70%),
+      radial-gradient(320px 110px at 82% 8%, rgba(255,255,255,.9), transparent 70%),
+      radial-gradient(280px 100px at 70% 42%, rgba(255,255,255,.7), transparent 70%),
+      radial-gradient(300px 100px at 6% 66%, rgba(255,255,255,.75), transparent 70%),
+      linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 45%, var(--sky-low) 100%);
+    background-attachment: fixed;
+    padding: calc(env(safe-area-inset-top, 0px) + 40px) 20px calc(env(safe-area-inset-bottom, 0px) + 40px);
+  }
+  .card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 44px 32px 40px;
+    background: rgba(255,255,255,.84);
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(40,90,140,.15);
+  }
+  .to { font-family: var(--hand); font-size: 30px; color: var(--accent); margin-bottom: 4px; }
+  .title { font-family: var(--serif); font-weight: 400; font-size: clamp(38px, 10vw, 58px); line-height: 1.08; margin-bottom: 28px; }
+  .para { font-size: 17.5px; margin-bottom: 20px; }
+
+  .section-title { font-family: var(--serif); font-weight: 400; font-size: 30px; line-height: 1.2; margin: 40px 0 6px; }
+  .section-sub { color: var(--ink-soft); font-size: 16px; margin-bottom: 18px; }
+
+  .gifts { list-style: none; display: grid; gap: 14px; }
+  .gift { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; }
+  .gift h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; line-height: 1.25; margin-bottom: 4px; }
+  .gift p { font-size: 16px; color: var(--ink-soft); }
+
+  .notes { margin-top: 26px; padding: 18px 20px; border-left: 3px solid var(--accent); background: rgba(255,255,255,.7); border-radius: 0 12px 12px 0; }
+  .notes h3 { font-family: var(--serif); font-weight: 400; font-size: 22px; margin-bottom: 6px; }
+  .notes ul { padding-left: 18px; }
+  .notes li { font-size: 16px; color: var(--ink-soft); margin-bottom: 6px; }
+
+  .closing { margin-top: 36px; }
+  .sign { margin-top: 8px; font-family: var(--hand); font-size: 34px; color: var(--accent); }
+  .hidden { display: none; }
+  @media (max-width: 480px) { .card { padding: 32px 22px 30px; } }
+  .section-title { margin-top: 44px; }
+  .gift { margin-bottom: 18px; padding: 22px 22px 8px; }
+  .gift h3 { font-size: 26px; margin-bottom: 12px; }
+  .gift p { font-size: 17px; color: var(--ink); margin-bottom: 16px; }
+  .notes p { font-size: 16px; color: var(--ink-soft); margin-bottom: 8px; }
+  .para strong { font-weight: 500; color: var(--accent); }
+  em { font-style: italic; }
+
+  /* Teks rata kiri-kanan */
+  .para, .notes li, .notes p { text-align: justify; text-justify: inter-word; }
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     EDIT BAGIAN INI AJA. Sisanya biarin.
+     ===================================================== -->
+<script>
+const CONFIG = {
+  to: `Untuk Ayang ❤️`,
+  judul: `Happy birthday, Luvv!`,
+
+  intro: [
+    `Selamat ulang tahun yaa sayangkuu! Cieee dah 21 tahun nichh, welcome to the new chapter! Semoga di umur yang baru ini ayang selalu sehat, bahagia, lancar rezekinya, dan semua hajat nya ayang bisa tercapai satu per satu. Semoga kuliahnya juga dilancarin yaa, apalagi sekarang sudah mulai ngurusin tugas akhir. Semoga semuanya dimudahin, ndak terlalu bikin ayang stres, dan nanti bisa selesai dengan hasil yang bikin ayang bangga sama diri sendiri. You got this yaa, zen selalu support ayang!`,
+    `Zen juga punya harapan buat ayang di umur yang sekarang. Semoga ayang makin dewasa, makin bisa ngontrol emosi, dan makin bisa ngatur ego, keep growing yaa. Kalau ada masalah, semoga kita bisa sama-sama belajar buat dengerin satu sama lain, bukan cuma pengen dimengerti. Kalau memang salah, semoga ayang bisa lebih berani lagi buat ngakuin tanpa harus defensif atau nyangkal dulu yahh. Begitu juga zen, kalau zen salah, zen juga harus bisa ngakuin dan belajar dari kesalahan itu. Zen bilang begini bukan karena ngerasa zen lebih baik dari ayang yaa. Zen juga masih banyak kurangnya. Zen cuma pengen kita sama-sama grow together, ndak terus-terusan ngulang kesalahan yang sama, dan bisa jadi pasangan yang lebih baik buat satu sama lain.`,
+    `Maaf ya sayanggg, tahun ini zen belum bisa ngerayain ulang tahun nya ayang secara langsung, padahal pengen sekali bisa ada di samping nya ayang di hari spesial seperti ini. Tapi mau gimana lagi yaa, kita masih harus LDR dulu, but it’s okay, we’ll get through this. Jadi untuk sekarang zen cuma bisa kirimin hadiah ini dari Malang buat ayang. Dari awal milih barang-barangnya, zen selalu kepikiran, kira-kira ayang bakal suka nda yaa, cocok nda yaa, atau mungkin malah ndakk kepake hihihih. Tapi semoga ayang suka sama semuanya yaa. Zen belum bisa kasih hadiahnya langsung ke tangan ayang, tapi zen seneng bisa siapin ini semua buat ayang di hari spesial ini. Anyway, ayang tuh always on my mind, every single day.❤️`
+  ],
+
+  hadiahJudul: `Hadiah dari zen 🎁`,
+  hadiahPembuka: [
+    `Ada enam barang yang zen kirim langsung dari Malang ke BTN Bumi Roviga Blok C6/7 hihihi. Semoga semuanya sampai dengan selamat yaa, dan semoga ayang suka sama hadiah-hadiah kecil dari zen ini. Yukkk, let’s see satu-satu apa aja isinya!`
+  ],
+
+  hadiah: [
+    { judul: `1. Kipas portable 🌬️`, isi: [
+      `Yang pertama ada kipas portableee! Hihihih. Soalnya ayang gampang sekali kepanasan kann, apalagi kalau lagi di luar dengan cuaca Palu yang panasnya bukan mainnn. Jadi zen kasih ini biar ayang bisa tetap adem di mana pun beraktivitas. Semoga kipasnya cocok, awet, dan bisa jadi partner in crime ayang ke mana-mana yaa. Oh iyaaa, sekarang no more excuses yaa, ndak ada alasan lagi buat males pake jilbab gara-gara kepanasan hihihih, awas aja kalau masih ngeluhhh 😗❤️`
+    ]},
+    { judul: `2. Parfum 🌷`, isi: [
+      `Selanjutnya ada parfummm! Inget ndakk, dulu zen pernah minta izin sama ayang pergi ke event parfum di Surabaya? Nahh, dari sana zen nyobain buanyak parfum sampai akhirnya ketemu wangi parfum ini yang menurut nya zen cocok sangatt sama ayang, literally your vibe. Tapi kan selera wangi orang beda-beda nyakk, jadi dicoba dulu yaa, semoga wanginya cocok sama selera nya ayang. Kalau kurang suka, paksa harus suka hehehe.`
+    ]},
+    { judul: `3. Bunga abadi 🌹`, isi: [
+      `Terus ada bunga buat ayangg! Sebenernya zen pengen sekali kasih bunga asli langsung ke tangan nya ayang, tapi karena kita masih jauh, jadi zen kasih ini dulu yaa. Bunganya bisa disimpen, long lasting banget, dan bisa sekalian jadi lampu hias di kamar nya ayang. Semoga ayang suka dan bisa jadi hiasan kecil yang bikin kamar nya ayang makin cantik kayak orang nya hihihi.`
+    ]},
+    { judul: `4. Novel Jika Kucing Lenyap dari Dunia 📖`, isi: [
+      `Berikutnya ada novelll! Judulnya Jika Kucing Lenyap dari Dunia. Semoga ayang suka sama ceritanya dan bisa temani ayang pas lagi santai atau lagi rest dari tugas kuliah, you deserve a break! Oh iyaaa, ini zen beli sebelum ayang bilang pengen novel Laut Bercerita, jadi yang ini dibaca dulu yaa, baru nanti lanjut ke novel yang ayang pengen itu hihihih.`
+    ]},
+    { judul: `5. Lip balm 💋`, isi: [
+      `Lanjuttt, ada lip balm buat ayanggg! Soalnya bibir nya ayang gampang sekali kering kann, jadi zen kasih ini deh hihihih. Semoga cocok yaa sama ayang, biar bibirnya ndak gampang kering lagi. Jangan lupa dipake yaa sayangkuu, self-care is a must! ❤️`
+    ]},
+    { judul: `6. Gelang couple 🫶🏻`, isi: [
+      `DANNN, hadiah yang terakhir adalah gelang couple kitaaaa! Hihihih, akhirnya kita punya barang couple juga, finally yahh, setelah dulu sempat ngobrolin pengen punya. Semoga ayang suka sama gelangnya dan mau dipake bareng zen. Sekarang kita memang masih jauh, tapi setidaknya ada satu barang yang sama-sama kita punya. Jadiii, gelangnya dijaga baik-baik yaa cantikkk, it means a lot to me!`
+    ]}
+  ],
+
+  catatanJudul: `Eh ada tambahan kecil juga nihh 📝`,
+  catatanPembuka: ``,
+  catatan: [
+    `Ada silicon case buat kipas Jisulife-nya, tinggal dipasang aja yaa biar kipasnya ndak gampang baret.`,
+    `Ada bola gabus kecil buat hiasan di dalam lampu bunganya. Mau dipasang atau ndakk, terserah ayang aja, bebas mau dibikin kayak gimana hihihih.`
+  ],
+
+  penutupJudul: `Sekali lagi, happy birthday, cayanggg! ❤️`,
+  penutup: [
+    `Makasih yaa sudah hadir di hidupnya zen, sudah mau jalanin hubungan ini lagi sama zen, dan sudah jadi salah satu orang yang bikin zen punya banyak alasan buat selalu bahagia. Zen tau kita masih banyak belajarnya, apalagi karena sekarang kita LDR. Pasti ada kalanya kita salah paham, beda pendapat, atau berantem gara-gara hal kecil. Tapi zen harap, sejauh apa pun jarak nya kita, kita tetap mau saling ngerti dan tidak gampang nyerah sama satu sama lain.`,
+    `Zen pengen kita terus tumbuh sama-sama, stronger together, belajar ngalah kalau memang perlu, belajar ngaku salah kalau memang salah, dan tidak biarkan ego bikin kita lupa kalau kita sebenarnya saling sayang. Zen ndak minta ayang jadi orang yang sempurna, karena zen juga bukan orang yang sempurna. Zen cuma berharap kita sama-sama punya kemauan buat memperbaiki diri dan tidak mengulangi kesalahan yang sama terus-terusan tanpa belajar apa-apa.`,
+    `Terakhir, semoga kita bisa cepet ketemu yaa. Zen dah kangen syekalii sama ayang, miss you so much, pengen ngobrol langsung, dan jalan-jalan kemanapun kita mau, bikin banyak memories bareng. Kalau nanti ketemu, siap-siap aja yaa, zen mau peyuk ayang lama lamaa buat bayar semua rasa kangen yang sudah numpuk ini hihihih.`,
+    `Sekali lagi, selamat ulang tahun, Rezky Amanda, kesayangan nya zenn. Semoga di umur yang baru ini banyak hal baik yang datang, semua urusannya lancer jaya, dan ayang selalu punya alasan buat selalu bahagia. Makasih sudah jadi ayang-nya zen sampai sekarang, you’re the best! Semoga tahun depan, tahun depannya lagi, dan seterusnya kita selalu bisa saling ngucapin ulang tahun, tapi dengan keadaan yang lebih baik dan semoga selalu bisa ngerayainnya sama-sama secara langsung.`,
+    `Zen sayang ayang banyak-banyakk. Happy birthday, cayangggggg! I love you so much ❤️`
+  ],
+  tandaTangan: `**Dari zen, yang selalu kangen yembo ♥**`
+};
+</script>
+
+<main class="card" id="card"></main>
+
+<script>
+(function () {
+  const esc = (t) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const fmt = (t) => esc(t).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\*(.+?)\*/g, "<em>$1</em>");
+  const card = document.getElementById("card");
+
+  function el(tag, cls, text, parent) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.innerHTML = fmt(text);
+    (parent || card).appendChild(e);
+    return e;
+  }
+  const paras = (arr, parent) => arr.forEach((t) => el("p", "para", t, parent));
+
+  document.title = "Selamat ulang tahun, Ayang";
+  el("p", "to", CONFIG.to);
+  el("h1", "title", CONFIG.judul);
+  paras(CONFIG.intro);
+
+  el("h2", "section-title", CONFIG.hadiahJudul);
+  paras(CONFIG.hadiahPembuka);
+  CONFIG.hadiah.forEach((g) => {
+    const box = el("section", "gift");
+    el("h3", null, g.judul, box);
+    paras(g.isi, box);
+  });
+
+  const notes = el("aside", "notes");
+  el("h3", null, CONFIG.catatanJudul, notes);
+  if (CONFIG.catatanPembuka) el("p", null, CONFIG.catatanPembuka, notes);
+  const ul = el("ul", null, null, notes);
+  CONFIG.catatan.forEach((t) => el("li", null, t, ul));
+
+  el("h2", "section-title", CONFIG.penutupJudul);
+  paras(CONFIG.penutup);
+  el("p", "sign", CONFIG.tandaTangan);
+})();
+</script>
+</body>
+</html>
